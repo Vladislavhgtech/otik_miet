@@ -10,6 +10,15 @@
 
 using namespace std;
 
+
+template<typename T>
+void print_size(std::string type_name)
+{
+    std::cout << type_name <<": " << sizeof(T) << std::endl;
+}
+
+
+
 template<typename T, typename Types>
 void print_number(std::string type_name, Types Arg, char* type) {
 
@@ -42,6 +51,19 @@ double*, size_t, ptrdiff_t.
 
 */
 
+print_size<char>("char");
+print_size<bool>("bool");
+print_size<wchar_t>("wchar_t");
+print_size<short>("short");
+print_size<int>("int");
+print_size<long>("long");
+print_size<long long>("long long");
+print_size<float>("float");
+print_size<double>("double");
+print_size<long double>("long double");
+print_size<size_t>("size_t");
+print_size<ptrdiff_t>("ptrdiff_t");
+print_size<void*>("void*");
 
     /*
 Задание Л1.з4. Разработайте программу на языке C/C++, создающую, инициализирующую одинаковыми значениями 𝑥
@@ -65,8 +87,8 @@ double*, size_t, ptrdiff_t.
 
     float x5 = -10 / (float)3;
     double x6 = -10 / (double)3;
-    print_number<float, float>("float", x5, ".12f");
-    print_number<double, double>("double", x5, ".12f");
+    print_number<float, float>("float", x5, ".6f");
+    print_number<double, double>("double", x6, ".6f");
 
     return 0;
 }
